@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+const pageTitle = "Página de inicio";
 ---
 
 <!doctype html>
@@ -13,9 +14,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-<a href="/about/">Sobre mi</a>
-<a href="/blog/">Blog</a>
-
+			<title>{pageTitle}</title>
+		</head>
+		<body>
+		  <a href="/">Inicio</a>
+		  <a href="/about/">Sobre mi</a>
+		  <a href="/blog/">Blog</a>
+		  <h1>Sobre mi</h1>
+		  <h1>{pageTitle}</h1>
 <h1>Sobre mi</h1>
 <h2>... ¡y mi nuevo sitio Astro!</h2>
 			<h1>Mi primer sitio astro</h1>
