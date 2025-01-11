@@ -26,7 +26,7 @@ const goal = 3;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Astro</title>
+
     <title>{pageTitle}</title>
 	<style>
 		h1 {
@@ -40,9 +40,7 @@ const goal = 3;
 	  </style>
   </head>
   <body>
-    <a href="/">Inicio</a>
-    <a href="/about/">Sobre mi</a>
-    <a href="/blog/">Blog</a>
+    <Header />
     <h1>Sobre mi</h1>
     <h1>{pageTitle}</h1>
     <h2>... ¡y mi nuevo sitio Astro!</h2>
@@ -68,6 +66,6 @@ const goal = 3;
 {finished && <p>¡He terminado este tutorial!</p>}
 
 {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
-
+<Footer />
   </body>
 </html>

@@ -1,29 +1,27 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/global.css';
 const pageTitle = "Página de inicio";
 ---
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<title>{pageTitle}</title>
-		</head>
-		<body>
-		  <a href="/">Inicio</a>
-		  <a href="/about/">Sobre mi</a>
-		  <a href="/blog/">Blog</a>
-		  <h1>Sobre mi</h1>
-		  <h1>{pageTitle}</h1>
-<h1>Sobre mi</h1>
-<h2>... ¡y mi nuevo sitio Astro!</h2>
-			<h1>Mi primer sitio astro</h1>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Header />
+    <h1>{pageTitle}</h1>
+    <Footer />
+	<script>
+	  document.querySelector('.hamburger').addEventListener('click', () => {
+		document.querySelector('.nav-links').classList.toggle('expanded');
+	  });
+	</script>
+  </body>
+	  
+  </body>
 </html>

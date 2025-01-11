@@ -13,14 +13,11 @@ const pageTitle = "Mi blog de Astro aprendizaje";
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
 		<main>
             <title>{pageTitle}</title>
         </head>
         <body>
-          <a href="/">Inicio</a>
-          <a href="/about/">Sobre mi</a>
-          <a href="/blog/">Blog</a>
+          <Header />
           <h1>Sobre mi</h1>
           <h1>{pageTitle}</h1>
 			<h1>Mi primer sitio astro</h1>
@@ -36,5 +33,6 @@ const pageTitle = "Mi blog de Astro aprendizaje";
                       </ul>
                   </body>
 			  </body>
+        <Footer />
 	</body>
 </html>
