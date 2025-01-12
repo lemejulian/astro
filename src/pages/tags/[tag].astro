@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+
+const allPosts = await Astro.glob('../posts/*.md');
+
+// Definir las rutas estáticas
+export async function getStaticPaths() {
+  return [
+    { params: { tag: "astro" } },
+    { params: { tag: "éxitos" } },
+    { params: { tag: "comunidad" } },
+    { params: { tag: "bloguear" } },
+    { params: { tag: "contratiempos" } },
+    { params: { tag: "aprender en público" } },
+  ];
+}
+
+const { tag } = Astro.params;
+
+const filteredPosts = allPosts.filter(post => post.frontmatter.tags?.includes(tag));
+---
+
+<BaseLayout pageTitle={tag}>
+  <p>Entradas etiquetadas con {tag}</p>
+  <ul>
+    {filteredPosts.length > 0 ? (
+      filteredPosts.map(post => (
+        <BlogPost url={post.url} title={post.frontmatter.title} />
+      ))
+    ) : (
+      <li>No hay entradas para esta etiqueta.</li>
+    )}
+  </ul>
+</BaseLayout>
